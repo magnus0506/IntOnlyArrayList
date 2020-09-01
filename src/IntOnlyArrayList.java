@@ -13,14 +13,11 @@ public class IntOnlyArrayList {
         ia[ia.length - 1] = value;
     }
     public void remove(int index) {
-        ia = Arrays.copyOf(ia, ia.length - 1);
-        for (int i = index; i < ia.length; i++) {
-            if (i != index) {
-                Arrays.copyOf(ia,ia.length);
-            } else {
-                Arrays.copyOf(ia,ia.length + 1);
-            }
+        int[] ia_new = Arrays.copyOf(ia, ia.length - 1);
+        for (int i = index; i < ia_new.length; i++) {
+            ia_new[i] = ia[i+1];
         }
+        ia = ia_new;
     }
 
     public void print(){
