@@ -47,5 +47,4 @@ public class IntOnlyArrayList {
         return intArray[index];
     }
 
-    public int setElement(int index) {return intArray[index];}
 }
